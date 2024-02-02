@@ -1,0 +1,66 @@
+spring:
+  profiles:
+    active: local
+    group:
+      local:
+        - common
+      dev:
+        - common
+      prod:
+        - common
+  mvc:
+    pathmatch:
+      matching-strategy: path_pattern_parser
+  messages:
+    basename: messages/common
+    cache-duration: 60
+---
+spring:
+  config:
+    activate:
+      on-profile: common
+    import: classpath:config/application.local.yml
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+  datasource:
+    # local
+    url: jdbc:mariadb://rkednsp.synology.me:3811/DEV_PLAN_APP
+    username: devTestUser1
+    password: 1q2w3e4r%T%T
+    configuration:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+  jpa:
+      hibernate:
+        ddl-auto: update
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      show-sql: true
+      properties:
+        hibernate.enable_lazy_load_no_trans: true
+        hibernate.format_sql: true
+
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: prod

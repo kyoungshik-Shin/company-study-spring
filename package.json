@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-scripts": "^3.0.1",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11"
+  }
+}

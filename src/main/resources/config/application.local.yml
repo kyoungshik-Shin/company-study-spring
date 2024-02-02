@@ -1,0 +1,11 @@
+logging:
+  config: classpath:logback/logback.local.xml
+tomcat:
+  ajp:
+    protocol: AJP/1.3
+    port: 10572
+server:
+  port: 10571
+  servlet:
+    session:
+      timeout: 3600  #loacl아닌경우 jeus-web-dd.xml에서 관리
