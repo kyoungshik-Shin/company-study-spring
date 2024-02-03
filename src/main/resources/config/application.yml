@@ -32,9 +32,9 @@ spring:
       enabled: false
   datasource:
     # local
-    url: jdbc:mariadb://rkednsp.synology.me:3811/DEV_PLAN_APP
-    username: devTestUser1
-    password: 1q2w3e4r%T%T
+    url:
+    username:
+    password: 
     configuration:
       minimum-idle: 1
       maximum-pool-size: 5

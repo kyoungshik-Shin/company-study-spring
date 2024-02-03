@@ -21,25 +21,24 @@ import lombok.ToString;
 public class GoodsDto {
     @Id
     @GeneratedValue
-    @Column(name = "GOODS_ID")
-    private String id;
-    @Column(name = "GOODS_NM")
-    private String goodsNm;
-    private int qty;
-    private int amt;
-
-    public GoodsDto(String goodsName){
-        this(goodsName, 0);
-    }
-
-    public GoodsDto(String goodsNm, int qty){
-        this(goodsNm, qty, 0);
-    }
-
-    public GoodsDto(String goodsNm, int qty, int amt){
-        this.goodsNm = goodsNm;
-        this.qty = qty;
-        this.amt = amt;
-    }
-
+    @Column(name = "ID")
+    private int id;
+    @Column(name = "SKU")
+    private long sku;
+    @Column(name = "TITLE")
+    private String title;
+    @Column(name = "DESCRIPTION")
+    private String description;
+    @Column(name = "AVAILABLESIZES")
+    private String availableSizes;
+    @Column(name = "STYLE")
+    private String style;
+    @Column(name = "PRICE")
+    private int price;
+    @Column(name = "INSTALLMENTS")
+    private int installments;
+    @Column(name = "CURRENCYID")
+    private String currencyId;
+    @Column(name = "CURRENCYFORMAT")
+    private String currencyFormat;
 }
